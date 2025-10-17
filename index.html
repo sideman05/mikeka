@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sure Odds Tanzania | Mikeka ya Uhakika</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top right, #00274d, #000);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero {
+      text-align: center;
+      padding: 5rem 1rem 3rem;
+      background: url('https://images.unsplash.com/photo-1602832325561-9e4d6a19a7d2?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #00ffae;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      color: #d1e8ff;
+      font-size: 1.2rem;
+    }
+
+    /* ---------- CARDS ---------- */
+    .container {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #00ffae;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #00ffae;
+      margin: 0.5rem auto 0;
+      border-radius: 3px;
+    }
+
+    .odds-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .odds-card {
+      background: linear-gradient(145deg, #01172c, #012a4a);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .odds-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 35px rgba(0,255,174,0.2);
+    }
+
+    .odds-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .odds-card .info {
+      padding: 1.5rem;
+    }
+
+    .odds-card h3 {
+      color: #00ffae;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .odds-card p {
+      color: #cfdde8;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- WHATSAPP BUTTON ---------- */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #25D366;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin: 3rem auto;
+      display: block;
+      width: fit-content;
+    }
+
+    .whatsapp-btn:hover {
+      background: #1ebe5d;
+      transform: scale(1.07);
+      box-shadow: 0 0 20px rgba(37,211,102,0.4);
+    }
+
+    .whatsapp-btn i {
+      font-size: 1.5rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #001d3a;
+      color: #aaa;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1> Sure Odds Tanzania </h1>
+      <p>Pata mikeka yenye ushindi mkubwa kila siku kwenye Betpawa, Betika, SportPesa & zaidi.</p>
+    </div>
+  </section>
+
+  <!-- MITEGO -->
+  <div class="container">
+    <h2 class="section-title">Mikeka ya Leo</h2>
+
+    <div class="odds-gallery">
+      <div class="odds-card">
+        <img src="/images/betpawa.jpg" alt="Mikeka Betpawa">
+        <div class="info">
+          <h3>💎 VIP Slip | Betika</h3>
+          <p>Odds 250+ | 95% Accuracy | Updated Daily</p>
+        </div>
+      </div>
+
+      <div class="odds-card">
+        <img src="/images/sportpesa.jpg" alt="Sportpesa Slip">
+        <div class="info">
+          <h3>⚡ Mega Odds | SportPesa</h3>
+          <p>High Confidence Picks | Expert Analyzed</p>
+        </div>
+      </div>
+
+      <div class="odds-card">
+        <img src="/images/betway.png" alt="Betlion Sure Odds">
+        <div class="info">
+          <h3>🔥 Sure 10 Games | Betlion</h3>
+          <p>Big Multiples | Trusted Combinations</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://wa.me/255617443803?text=Habari%2C%20nataka%20kupata%20mikeka%20ya%20Sure%20Odds%20leo!" class="whatsapp-btn" target="_blank">
+      <i class="fab fa-whatsapp"></i> Wasiliana WhatsApp
+    </a>
+  </div>
+
+  <footer>
+    © 2025 Sure Odds Tanzania — Mikeka ya Uhakika Kila Siku ⚽
+  </footer>
+
+</body>
+</html>
