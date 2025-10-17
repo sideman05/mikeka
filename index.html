@@ -23,6 +23,49 @@
       overflow-x: hidden;
     }
 
+    /* ---------- NAVBAR ---------- */
+    header {
+      width: 100%;
+      padding: 1.2rem 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      color: #00ffae;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #d1e8ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffae;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: #00ffae;
+      cursor: pointer;
+    }
+
     /* ---------- HERO SECTION ---------- */
     .hero {
       text-align: center;
@@ -162,6 +205,30 @@
       border-top: 1px solid rgba(255,255,255,0.1);
     }
 
+    /* ---------- RESPONSIVE NAV ---------- */
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        display: none;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
     @media (max-width: 600px) {
       .hero h1 {
         font-size: 2rem;
@@ -174,6 +241,17 @@
 </head>
 <body>
 
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Sure Odds 🇹🇿</div>
+    <i class="fa fa-bars menu-toggle" id="menu-btn"></i>
+    <nav id="nav-menu">
+      <a href="#">Nyumbani</a>
+      <a href="#gallery">Mikeka</a>
+      <a href="#contact">Mawasiliano</a>
+    </nav>
+  </header>
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
@@ -183,7 +261,7 @@
   </section>
 
   <!-- MITEGO -->
-  <div class="container">
+  <div class="container" id="gallery">
     <h2 class="section-title">Mikeka ya Leo</h2>
 
     <div class="odds-gallery">
@@ -191,7 +269,7 @@
         <img src="/images/betpawa.jpg" alt="Mikeka Betpawa">
         <div class="info">
           <h3>💎 VIP Slip | Betika</h3>
-          <p>Odds 250+ | 95% Accuracy | Updated Daily</p>
+          <p>Odds 10+ | 95% Accuracy | Updated Daily</p>
         </div>
       </div>
 
@@ -217,9 +295,20 @@
     </a>
   </div>
 
-  <footer>
+  <footer id="contact">
     © 2025 Sure Odds Tanzania — Mikeka ya Uhakika Kila Siku ⚽
   </footer>
+
+  <!-- JS -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      menuBtn.classList.toggle('fa-times');
+    });
+  </script>
 
 </body>
 </html>
