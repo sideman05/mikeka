@@ -531,24 +531,22 @@
       // Click fallback: reveal briefly
       btn.addEventListener('click', revealOnce);
 
-      // Press-and-hold on touch: reveal while pressing
-      let holdTimeout = null;
-      btn.addEventListener('touchstart', function(e){
+      // Press-and-hold anywhere on blocker reveals while touching
+      mobileBlocker.addEventListener('touchstart', function(e){
+        // If user touched the button, let button handler handle it
+        if (e.target === btn) return;
         e.preventDefault();
         hideBlocker();
-        // if user keeps holding, stay revealed; start a safety timeout in case touchend missed
-        holdTimeout = setTimeout(function(){ /* noop - keep visible */ }, 10000);
       }, {passive:false});
 
-      btn.addEventListener('touchend', function(e){
-        e.preventDefault();
-        clearTimeout(holdTimeout);
-        // hide immediately when user releases
+      mobileBlocker.addEventListener('touchend', function(e){
+        // On release, re-show blocker immediately
         if (isSmallScreen()) showBlocker();
       }, {passive:false});
 
-      // Prevents double-tap zoom or selection on blocker background BUT allow button interaction
-      mobileBlocker.addEventListener('touchstart', function(e){ if (e.target === mobileBlocker) e.preventDefault(); }, {passive:false});
+      // Also ensure button touch works: touchstart on button reveals, touchend hides
+      btn.addEventListener('touchstart', function(e){ e.preventDefault(); hideBlocker(); }, {passive:false});
+      btn.addEventListener('touchend', function(e){ e.preventDefault(); if (isSmallScreen()) showBlocker(); }, {passive:false});
 
       // Re-show blocker when page visibility changes or window loses focus
       document.addEventListener('visibilitychange', function(){ if (document.hidden && isSmallScreen()) showBlocker(); });
