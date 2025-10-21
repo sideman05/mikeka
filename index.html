@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#001d3a">
-  <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="google" content="notranslate">
   <title>Sure Odds Tanzania | Mikeka ya Uhakika</title>
   <script defer src="/_vercel/insights/script.js"></script>
@@ -14,22 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* Mobile blocker styles */
-    #mobile-blocker{
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.98));
-      color: #fff;
-      z-index: 100000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    #mobile-blocker-inner{max-width:320px;padding:22px;border-radius:14px}
-    #mobile-blocker-text{margin-bottom:14px;color:#cfdde8}
-    #mobile-blocker-btn{background:#00ffae;border:none;padding:12px 18px;border-radius:999px;font-weight:700}
     * {
       margin: 0;
       padding: 0;
@@ -83,9 +65,7 @@
       display: none;
       font-size: 1.8rem;
       color: #00ffae;
-  cursor: pointer;
-  padding: 12px;
-  border-radius: 10px;
+      cursor: pointer;
     }
 
     /* ---------- HERO SECTION ---------- */
@@ -203,8 +183,8 @@
       text-decoration: none;
       transition: all 0.3s ease;
       margin: 3rem auto;
-  display: block;
-  width: fit-content;
+      display: block;
+      width: fit-content;
     }
 
     .whatsapp-btn:hover {
@@ -242,25 +222,6 @@
         display: none;
       }
 
-      /* Make the menu toggle larger for touch */
-      .menu-toggle {
-        display: block;
-        font-size: 2.2rem;
-        padding: 14px;
-      }
-
-      /* Fix WhatsApp CTA to bottom-right on small screens */
-      .whatsapp-btn {
-        position: fixed;
-        right: 18px;
-        bottom: 18px;
-        margin: 0;
-        padding: 0.9rem 1.1rem;
-        border-radius: 999px;
-        z-index: 9999;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-      }
-
       nav.active {
         display: flex;
       }
@@ -281,15 +242,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Mobile anti-screenshot overlay: shown by default on small screens -->
-  <div id="mobile-blocker" style="display:none;">
-    <div id="mobile-blocker-inner">
-      <div id="mobile-blocker-text">To view content, tap below</div>
-      <button id="mobile-blocker-btn">Tap to view</button>
-    </div>
-  </div>
-
 
   <!-- HEADER -->
   <header>
@@ -316,7 +268,7 @@
 
     <div class="odds-gallery">
       <div class="odds-card">
-        <img src="/images/betpawa.jpg" alt="Mikeka Betpawa" loading="lazy" draggable="false">
+        <img src="/images/betpawa.jpg" alt="Mikeka Betpawa">
         <div class="info">
           <h3>💎 VIP Slip | Betika</h3>
           <p>Odds 10+ | 95% Accuracy | Updated Daily</p>
@@ -324,7 +276,7 @@
       </div>
 
       <div class="odds-card">
-        <img src="/images/sportpesa.jpg" alt="Sportpesa Slip" loading="lazy" draggable="false">
+        <img src="/images/sportpesa.jpg" alt="Sportpesa Slip">
         <div class="info">
           <h3>⚡ Mega Odds | SportPesa</h3>
           <p>High Confidence Picks | Expert Analyzed</p>
@@ -332,7 +284,7 @@
       </div>
 
       <div class="odds-card">
-        <img src="/images/betway.png" alt="Betlion Sure Odds" loading="lazy" draggable="false">
+        <img src="/images/betway.png" alt="Betlion Sure Odds">
         <div class="info">
           <h3>🔥 Sure 10 Games | Betlion</h3>
           <p>Big Multiples | Trusted Combinations</p>
@@ -360,198 +312,6 @@
       navMenu.classList.toggle('active');
       menuBtn.classList.toggle('fa-times');
     });
-  </script>
-
-  <!-- Anti-screenshot (best-effort) -->
-  <style>
-    /* Disable text selection and long-press image/save */
-    html, body, * {
-      -webkit-user-select: none !important;
-      -moz-user-select: none !important;
-      -ms-user-select: none !important;
-      user-select: none !important;
-      -webkit-touch-callout: none !important;
-    }
-
-    /* Invisible overlay used when page is hidden to prevent clean screenshots */
-    #noscreenshot-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.9);
-      color: transparent;
-      z-index: 99999;
-      display: none;
-      backdrop-filter: blur(6px);
-    }
-
-    /* Stronger noise on mobile to make screenshots harder to read */
-    @media (max-width: 768px){
-      #noise-canvas{opacity:0.22}
-      #noscreenshot-overlay{background:rgba(0,0,0,0.96)}
-    }
-  </style>
-
-  <div id="noscreenshot-overlay" aria-hidden="true"></div>
-
-  <script>
-    // Best-effort client-side protections. Cannot block OS-level screenshots.
-    (function(){
-      // Disable right-click/context menu
-      window.addEventListener('contextmenu', function(e){
-        e.preventDefault();
-      });
-
-      // Disable common key combos (PrintScreen cannot be reliably blocked from JS)
-      window.addEventListener('keydown', function(e){
-        // Block: Ctrl+P, Ctrl+S, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, F12
-        if ((e.ctrlKey || e.metaKey) && (e.key === 'p' || e.key === 's' || e.key === 'u')) {
-          e.preventDefault();
-          return false;
-        }
-
-        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) {
-          e.preventDefault();
-          return false;
-        }
-
-        if (e.key === 'F12') {
-          e.preventDefault();
-          return false;
-        }
-      });
-
-      // Blur/overlay when page is hidden or window loses focus to prevent clean screenshots
-      const overlay = document.getElementById('noscreenshot-overlay');
-
-      function showOverlay(){
-        overlay.style.display = 'block';
-      }
-
-      function hideOverlay(){
-        overlay.style.display = 'none';
-      }
-
-      document.addEventListener('visibilitychange', function(){
-        if (document.hidden) showOverlay(); else hideOverlay();
-      });
-
-      window.addEventListener('blur', showOverlay);
-      window.addEventListener('focus', hideOverlay);
-
-      // Periodically draw a translucent noise canvas on top to discourage simple screenshots
-      try {
-        const noiseCanvas = document.createElement('canvas');
-        noiseCanvas.id = 'noise-canvas';
-        noiseCanvas.style.position = 'fixed';
-        noiseCanvas.style.inset = '0';
-        noiseCanvas.style.pointerEvents = 'none';
-        noiseCanvas.style.zIndex = '99998';
-        noiseCanvas.width = window.innerWidth;
-        noiseCanvas.height = window.innerHeight;
-        document.body.appendChild(noiseCanvas);
-        const ctx = noiseCanvas.getContext('2d');
-
-        function drawNoise(){
-          const w = noiseCanvas.width = window.innerWidth;
-          const h = noiseCanvas.height = window.innerHeight;
-          const imgData = ctx.createImageData(w, h);
-          for (let i = 0; i < imgData.data.length; i += 4){
-            const val = Math.random() * 255 | 0;
-            imgData.data[i] = val;
-            imgData.data[i+1] = val;
-            imgData.data[i+2] = val;
-            imgData.data[i+3] = 8; // low alpha for subtle noise
-          }
-          ctx.putImageData(imgData, 0, 0);
-        }
-
-        let noiseInterval = setInterval(drawNoise, 700);
-
-          window.addEventListener('resize', function(){
-            noiseCanvas.width = window.innerWidth;
-            noiseCanvas.height = window.innerHeight;
-            drawNoise();
-          });
-
-          // Also handle orientationchange for mobile browsers
-          window.addEventListener('orientationchange', function(){
-            noiseCanvas.width = window.innerWidth;
-            noiseCanvas.height = window.innerHeight;
-            drawNoise();
-          });
-      } catch (err){
-        // ignore if canvas not allowed
-      }
-
-        // Prevent long-press context menu on images (mobile)
-        Array.from(document.querySelectorAll('img')).forEach(img => {
-          img.addEventListener('touchstart', function(ev){
-            // small timeout to prevent save-image UI on long press
-            ev.preventDefault();
-          }, {passive: false});
-        });
-
-        // Improve menu toggle touch area for accessibility
-        const menuBtnEl = document.getElementById('menu-btn');
-        if (menuBtnEl){
-          menuBtnEl.addEventListener('touchstart', function(e){ e.target.classList.toggle('fa-times'); document.getElementById('nav-menu').classList.toggle('active'); }, {passive: true});
-        }
-
-    })();
-  </script>
-
-  <script>
-    // Mobile blocker: show an overlay on small viewports and reveal content briefly on tap.
-    (function(){
-      const ENABLE_MOBILE_BLOCKER = true; // set false to disable
-      const REVEAL_DURATION_MS = 7000; // how long to reveal after tap
-      const mobileBlocker = document.getElementById('mobile-blocker');
-      const btn = document.getElementById('mobile-blocker-btn');
-
-      function isSmallScreen(){ return window.innerWidth <= 768; }
-
-      function showBlocker(){
-        if (!ENABLE_MOBILE_BLOCKER) return;
-        if (!isSmallScreen()) { mobileBlocker.style.display = 'none'; return; }
-        mobileBlocker.style.display = 'flex';
-      }
-
-      function hideBlocker(){ mobileBlocker.style.display = 'none'; }
-
-      // On load
-      window.addEventListener('load', showBlocker);
-      window.addEventListener('resize', showBlocker);
-
-      function revealOnce(){
-        hideBlocker();
-        // After REVEAL_DURATION_MS show blocker again to discourage screenshots
-        setTimeout(function(){ if (isSmallScreen()) showBlocker(); }, REVEAL_DURATION_MS);
-      }
-
-      // Click fallback: reveal briefly
-      btn.addEventListener('click', revealOnce);
-
-      // Press-and-hold anywhere on blocker reveals while touching
-      mobileBlocker.addEventListener('touchstart', function(e){
-        // If user touched the button, let button handler handle it
-        if (e.target === btn) return;
-        e.preventDefault();
-        hideBlocker();
-      }, {passive:false});
-
-      mobileBlocker.addEventListener('touchend', function(e){
-        // On release, re-show blocker immediately
-        if (isSmallScreen()) showBlocker();
-      }, {passive:false});
-
-      // Also ensure button touch works: touchstart on button reveals, touchend hides
-      btn.addEventListener('touchstart', function(e){ e.preventDefault(); hideBlocker(); }, {passive:false});
-      btn.addEventListener('touchend', function(e){ e.preventDefault(); if (isSmallScreen()) showBlocker(); }, {passive:false});
-
-      // Re-show blocker when page visibility changes or window loses focus
-      document.addEventListener('visibilitychange', function(){ if (document.hidden && isSmallScreen()) showBlocker(); });
-      window.addEventListener('blur', function(){ if (isSmallScreen()) showBlocker(); });
-    })();
   </script>
 
 </body>
